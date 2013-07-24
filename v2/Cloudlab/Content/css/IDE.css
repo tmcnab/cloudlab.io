@@ -1,0 +1,118 @@
+﻿.btn {
+    cursor: pointer;
+}
+
+i.tab-close {
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.terminal .clipboard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.01;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.01);
+    width: 2px;
+}
+
+.cmd > .clipboard {
+    position: fixed;
+}
+
+.terminal {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px 0;
+}
+
+.cmd {
+    height: 1.3em;
+    margin: 0;
+    padding: 0;
+}
+
+.terminal .terminal-output div {
+    display: block;
+}
+
+.terminal, .terminal .terminal-output, .terminal .terminal-output div, .terminal .terminal-output div div, .cmd, .terminal .cmd span, .terminal .cmd div {
+    font-family: monospace;
+    color: #aaa;
+    background-color: #000;
+    font-size: 12px;
+}
+
+.terminal .cmd span {
+    float: left;
+}
+
+.terminal .terminal-output div.error, .terminal .terminal-output div.error div {
+    color: red;
+}
+
+.tilda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+}
+
+.clear {
+    clear: both;
+}
+
+.terminal .cmd span.inverted, .terminal div::-moz-selection, .terminal span::-moz-selection, .terminal div::selection, .terminal span::selection {
+    background-color: #aaa;
+    color: #000;
+}
+
+#editorContainer {
+    margin-left: 0;
+    position: relative;
+}
+
+.tab-content-size {
+    width: 100%;
+    height: 600px;
+}
+
+.btn-toolbar {
+    background-color: #CCC;
+    margin-bottom: 0;
+    margin-top: 1px;
+    padding: 5px 5px 0 5px;
+}
+
+.editor-mode, terminal-setting, .editor-setting {
+    cursor: default;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+div.container-fluid {
+    top: 43px;
+    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.fullscreen {
+    display: block;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 90%;
+}
+
+code {
+    padding:0;
+    background-color:transparent;
+}

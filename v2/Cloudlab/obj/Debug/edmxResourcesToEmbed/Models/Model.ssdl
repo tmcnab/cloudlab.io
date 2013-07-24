@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="APIKeys" EntityType="DatabaseModel.Store.APIKeys" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CollectionItems" EntityType="DatabaseModel.Store.CollectionItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Collections" EntityType="DatabaseModel.Store.Collections" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JSEntities" EntityType="DatabaseModel.Store.JSEntities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DatabaseModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_APIKeys_Users" Association="DatabaseModel.Store.FK_APIKeys_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="APIKeys" EntitySet="APIKeys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CollectionItems_Collections" Association="DatabaseModel.Store.FK_CollectionItems_Collections">
+      <End Role="Collections" EntitySet="Collections" />
+      <End Role="CollectionItems" EntitySet="CollectionItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Collections_Users" Association="DatabaseModel.Store.FK_Collections_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Collections" EntitySet="Collections" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="APIKeys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReadFlag" Type="bit" Nullable="false" />
+    <Property Name="WriteFlag" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CollectionItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CollectionId" Type="int" Nullable="false" />
+    <Property Name="Shortname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Collections">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="Created" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JSEntities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Entity" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Created" Type="datetime2" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime2" Nullable="false" />
+    <Property Name="IsContactable" Type="bit" Nullable="false" />
+    <Property Name="ServiceLevel" Type="smallint" Nullable="false" />
+    <Property Name="ServiceExpiration" Type="datetime2" Nullable="false" />
+    <Property Name="DropboxToken" Type="nvarchar" MaxLength="500" />
+    <Property Name="DropboxSecret" Type="nvarchar" MaxLength="500" />
+    <Property Name="MasterKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_APIKeys_Users">
+    <End Role="Users" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="APIKeys" Type="DatabaseModel.Store.APIKeys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="APIKeys">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CollectionItems_Collections">
+    <End Role="Collections" Type="DatabaseModel.Store.Collections" Multiplicity="1" />
+    <End Role="CollectionItems" Type="DatabaseModel.Store.CollectionItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Collections">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CollectionItems">
+        <PropertyRef Name="CollectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Collections_Users">
+    <End Role="Users" Type="DatabaseModel.Store.Users" Multiplicity="1" />
+    <End Role="Collections" Type="DatabaseModel.Store.Collections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Collections">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

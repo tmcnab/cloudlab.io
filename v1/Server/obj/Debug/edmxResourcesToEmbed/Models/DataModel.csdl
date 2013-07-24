@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TauEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DataObjects" EntityType="DataModel.DataObject" />
+    <EntitySet Name="DataObjectTags" EntityType="DataModel.DataObjectTag" />
+    <EntitySet Name="SupportRequests" EntityType="DataModel.SupportRequest" />
+    <EntitySet Name="ToolObjects" EntityType="DataModel.ToolObject" />
+    <EntitySet Name="ToolObjectTags" EntityType="DataModel.ToolObjectTag" />
+    <EntitySet Name="UserProfiles" EntityType="DataModel.UserProfile" />
+    <EntitySet Name="ViolationReportItems" EntityType="DataModel.ViolationReportItem" />
+    <AssociationSet Name="FK_DataObjects_UserProfiles" Association="DataModel.FK_DataObjects_UserProfiles">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="DataObject" EntitySet="DataObjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataObjectTags_DataObjects" Association="DataModel.FK_DataObjectTags_DataObjects">
+      <End Role="DataObject" EntitySet="DataObjects" />
+      <End Role="DataObjectTag" EntitySet="DataObjectTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupportRequests_UserProfiles" Association="DataModel.FK_SupportRequests_UserProfiles">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="SupportRequest" EntitySet="SupportRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToolObjects_UserProfiles" Association="DataModel.FK_ToolObjects_UserProfiles">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="ToolObject" EntitySet="ToolObjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToolObjectTags_ToolObjects" Association="DataModel.FK_ToolObjectTags_ToolObjects">
+      <End Role="ToolObject" EntitySet="ToolObjects" />
+      <End Role="ToolObjectTag" EntitySet="ToolObjectTags" />
+    </AssociationSet>
+    <EntitySet Name="DocumentationItems" EntityType="DataModel.DocumentationItem" />
+  </EntityContainer>
+  <EntityType Name="DataObject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentId" />
+    <Property Type="Int64" Name="ToolId" />
+    <Property Type="Int32" Name="UserProfileId" Nullable="false" />
+    <Property Type="DateTime" Name="Created" Nullable="false" />
+    <Property Type="DateTime" Name="Modified" />
+    <Property Type="Boolean" Name="IsPublic" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="DataModel.FK_DataObjects_UserProfiles" FromRole="DataObject" ToRole="UserProfile" />
+    <NavigationProperty Name="DataObjectTags" Relationship="DataModel.FK_DataObjectTags_DataObjects" FromRole="DataObject" ToRole="DataObjectTag" />
+  </EntityType>
+  <EntityType Name="DataObjectTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DataObjectId" Nullable="false" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DataObject" Relationship="DataModel.FK_DataObjectTags_DataObjects" FromRole="DataObjectTag" ToRole="DataObject" />
+  </EntityType>
+  <EntityType Name="SupportRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserProfileId" Nullable="false" />
+    <Property Type="DateTime" Name="Created" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Problem" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Solution" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="WeKnowAboutIt" Nullable="false" />
+    <Property Type="Boolean" Name="WeSolvedIt" Nullable="false" />
+    <NavigationProperty Name="UserProfile" Relationship="DataModel.FK_SupportRequests_UserProfiles" FromRole="SupportRequest" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="ToolObject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ParentId" />
+    <Property Type="Int32" Name="UserProfileId" Nullable="false" />
+    <Property Type="DateTime" Name="Created" Nullable="false" />
+    <Property Type="DateTime" Name="Modified" />
+    <Property Type="Boolean" Name="IsPublic" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tool" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="DataModel.FK_ToolObjects_UserProfiles" FromRole="ToolObject" ToRole="UserProfile" />
+    <NavigationProperty Name="ToolObjectTags" Relationship="DataModel.FK_ToolObjectTags_ToolObjects" FromRole="ToolObject" ToRole="ToolObjectTag" />
+  </EntityType>
+  <EntityType Name="ToolObjectTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ToolObjectId" Nullable="false" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ToolObject" Relationship="DataModel.FK_ToolObjectTags_ToolObjects" FromRole="ToolObjectTag" ToRole="ToolObject" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="User" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="Coverage" Nullable="false" />
+    <Property Type="DateTime" Name="CoverageUntil" Nullable="false" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="UseGravatar" Nullable="false" />
+    <Property Type="Boolean" Name="AllowContact" Nullable="false" />
+    <Property Type="Guid" Name="APIKey" Nullable="false" />
+    <NavigationProperty Name="DataObjects" Relationship="DataModel.FK_DataObjects_UserProfiles" FromRole="UserProfile" ToRole="DataObject" />
+    <NavigationProperty Name="SupportRequests" Relationship="DataModel.FK_SupportRequests_UserProfiles" FromRole="UserProfile" ToRole="SupportRequest" />
+    <NavigationProperty Name="ToolObjects" Relationship="DataModel.FK_ToolObjects_UserProfiles" FromRole="UserProfile" ToRole="ToolObject" />
+  </EntityType>
+  <EntityType Name="ViolationReportItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DataId" Nullable="false" />
+    <Property Type="Int64" Name="ToolId" Nullable="false" />
+    <Property Type="Int32" Name="UserProfileId" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DataObjects_UserProfiles">
+    <End Type="DataModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="DataModel.DataObject" Role="DataObject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataObject">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataObjectTags_DataObjects">
+    <End Type="DataModel.DataObject" Role="DataObject" Multiplicity="1" />
+    <End Type="DataModel.DataObjectTag" Role="DataObjectTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataObject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataObjectTag">
+        <PropertyRef Name="DataObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupportRequests_UserProfiles">
+    <End Type="DataModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="DataModel.SupportRequest" Role="SupportRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupportRequest">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToolObjects_UserProfiles">
+    <End Type="DataModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="DataModel.ToolObject" Role="ToolObject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToolObject">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToolObjectTags_ToolObjects">
+    <End Type="DataModel.ToolObject" Role="ToolObject" Multiplicity="1" />
+    <End Type="DataModel.ToolObjectTag" Role="ToolObjectTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToolObject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToolObjectTag">
+        <PropertyRef Name="ToolObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DocumentationItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Object" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsStatic" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

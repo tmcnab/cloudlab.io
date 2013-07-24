@@ -1,0 +1,125 @@
+html
+{
+	-webkit-font-smoothing:antialiased;
+}
+
+.cta
+{
+	text-align:center;
+	margin-bottom:20px;
+}
+
+.cta h1
+{
+	font-size:80px;
+	font-family:Monospace;
+}
+
+.cta h2
+{
+	font-size:30px;
+	margin-top:20px;
+}
+
+dl
+{
+	font-size:14px;
+}
+
+dt
+{
+	font-size:18px;
+}
+
+dt,dd
+{
+	margin-bottom:5px;
+}
+
+
+footer p
+{
+	text-align:center;
+	font-size:10px;
+}
+
+.terminal .clipboard
+{
+	position:absolute;
+	bottom:0;
+	left:0;
+	opacity:0.01;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.01);
+	width:2px;
+}
+
+.cmd > .clipboard
+{
+	position:fixed;
+}
+
+.terminal
+{
+	position:relative;
+	overflow:hidden;
+	min-height:252px;
+	max-height:252px;
+	height:252px;
+	border-radius:3px;
+	padding:10px;
+}
+
+.cmd
+{
+	height:1.3em;
+	margin:0;
+	padding:0;
+}
+
+.terminal .terminal-output div
+{
+	display:block;
+}
+
+.terminal,.terminal .terminal-output,.terminal .terminal-output div,.terminal .terminal-output div div,.cmd,.terminal .cmd span,.terminal .cmd div
+{
+	font-family:Monospace;
+	color:#ddd;
+	background-color:#000;
+	font-size:12px;
+}
+
+.terminal .cmd span
+{
+	float:left;
+}
+
+.terminal .terminal-output div.error,.terminal .terminal-output div.error div
+{
+	color:red;
+}
+
+.tilda
+{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:1100;
+}
+
+.clear
+{
+	clear:both;
+}
+
+.terminal .cmd span.inverted,.terminal div::-moz-selection,.terminal span::-moz-selection,.terminal div::selection,.terminal span::selection
+{
+	background-color:#aaa;
+	color:#000;
+}
+
+.content,.btn-toolbar
+{
+	margin-top:10px;
+}

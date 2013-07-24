@@ -1,0 +1,40 @@
+﻿@using Cloudlab.Helpers
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div>
+                <img src="http://cloudlab.io/Content/i/icon.png" class="pull-left" style="width:30px; margin-top:3px;" />
+                <a class="brand">Cloudlab.io</a>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a data-toggle="modal" data-target="#UploadFileModal"><i class="icon-upload icon-white"></i> Upload</a></li>
+                <li class="divider-vertical"></li>
+            </ul>
+            <form class="navbar-search pull-left">
+                <input type="text" class="search-query span2" placeholder="Search" />
+            </form>
+            <ul class="nav pull-right">
+                <li class="divider-vertical"></li>
+                <li><a id="userFeedbackButton" rel="tooltip" data-placement="bottom" title="Open Feedback &amp; Support (Powered by UserVoice)"><i class="icon-signal icon-white"></i> Feedback &amp; Support</a></li>
+                <li class="divider-vertical"></li>
+                <li><img src="@Html.GravatarAvatarUrl(User.Identity.Name, 30)" style="margin-top:5px; border-radius:3px;" /></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a data-toggle="modal" data-target="#UserProfileModal"><i class="icon-user"></i> My Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Main/Exit"><i class="icon-off"></i> Quit</a></li>
+                    </ul>
+                </li>
+            </ul>
+            }
+            else
+            {
+            <a id="NavBar_AuthButton" class="btn">Sign In</a>
+            }
+        </div>
+    </div>
+</div>

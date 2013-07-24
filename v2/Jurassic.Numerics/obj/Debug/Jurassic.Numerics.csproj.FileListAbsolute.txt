@@ -1,0 +1,24 @@
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\License.txt
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\Jurassic.Numerics.dll
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\Jurassic.Numerics.pdb
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\Jurassic.dll
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\MathNet.Numerics.dll
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\zlib.net.dll
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\Jurassic.pdb
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\MathNet.Numerics.pdb
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\bin\Debug\MathNet.Numerics.xml
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\obj\Debug\Jurassic.Numerics.dll
+C:\Users\Tristan McNab\Desktop\Tau\Jurassic.Numerics\obj\Debug\Jurassic.Numerics.pdb
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\License.txt
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\Jurassic.Numerics.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\Jurassic.Numerics.pdb
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\Jurassic.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\MathNet.Numerics.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\zlib.net.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\Jurassic.pdb
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\MathNet.Numerics.pdb
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\bin\Debug\MathNet.Numerics.xml
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\obj\Debug\Jurassic.Numerics.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.Numerics\obj\Debug\Jurassic.Numerics.pdb

@@ -1,0 +1,19 @@
+﻿<div class="tab-pane active" id="T1">
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <a id="vmClearButton" class="btn btn-success"><i class="icon-refresh icon-white"></i> Clear</a>
+            <a id="vmResetButton" class="btn btn-danger"><i class="icon-repeat icon-white"></i> Reset</a>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-cog icon-white"></i> REPL <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a data-term-setting="repl-undefined"><i class="icon-ok invisible"></i> Show <span style=" font-family:Monospace ">undefined</span> Values</a></li>
+                <li><a data-term-setting="repl-console-timestamp"><i class="icon-ok invisible"></i> Console Message Timestamps</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content-size" id="terminalContainer">
+    </div>
+</div>

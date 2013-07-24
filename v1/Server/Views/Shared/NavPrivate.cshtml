@@ -1,0 +1,17 @@
+﻿<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" style="float:right">@ViewBag.Title</a>
+            <ul class="nav">
+                <li id="nav_workspace"><a href="/Workspace">Workspace</a></li>
+                <li id="nav_ide"><a href="/IDE">IDE</a></li>
+                <li id="nav_documentation"><a href="/Documentation">Documentation</a></li>
+                <li id="nav_account"><a href="/Account">Account</a></li>
+                @if (User.IsInRole("Administrators"))
+                {
+                <li id="nav_acp"><a href="/ACP">ACP</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

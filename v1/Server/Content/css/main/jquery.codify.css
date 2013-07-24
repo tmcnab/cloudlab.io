@@ -1,0 +1,114 @@
+﻿cdfy-container {
+    background-color:transparent;
+}
+
+.cdfy-top, .cdfy-bottom {
+    background-color:#F7F7F7;
+    border-left:1px solid #EEE;
+	border-right:1px solid #EEE;
+}
+
+.cdfy-bottom {
+	border-bottom:1px solid #EEE;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+	max-height: 39px;
+	min-height:39px;
+	height: 39px;
+}
+
+.cdfy-top {
+    border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	border-top:1px solid #EEE;
+	padding-left:35px;
+	padding-top:2px;
+	height: 40px;
+}
+
+.cdfy-rowcol {
+    padding-right: 5px;
+}
+
+.cdfy-valmsg {
+	margin-left:35px;
+}
+
+.cdfy-rowcol , .cdfy-valmsg {
+    margin-top:12px;
+}
+
+.CodeMirror, .cdfy-bottom {
+    font-family:Monospace;
+    font-size:14px;
+}
+
+.CodeMirror-scroll {
+    height: 500px;
+}
+
+.CodeMirror {
+    border-right: 1px solid #EEE;
+}
+
+
+/********************************************************/
+.CodeMirror-dialog {
+  position: relative;
+}
+
+.CodeMirror-dialog > div {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background-color:#F0F0F0;
+  border: 1px solid #eee;
+  z-index: 15;
+  padding: .1em .8em;
+  overflow: hidden;
+  color: #333;
+}
+
+.CodeMirror-dialog input {
+  font-family:Monospace;
+}
+
+/*******************************************************/
+
+.CodeMirror-completions {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  -moz-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+}
+.CodeMirror-completions select {
+  background: #fafafa;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+/*******************************************************/
+
+.fullscreen {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border: 0px solid #BBBBBB;
+    opacity: 1;
+}
+
+.CodeMirror-FS {
+    height:100%;
+}

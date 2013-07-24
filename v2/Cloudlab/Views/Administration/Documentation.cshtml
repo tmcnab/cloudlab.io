@@ -1,0 +1,50 @@
+﻿@model Cloudlab.ViewModels.JSEntityViewModel
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Documentation</title>
+    <link href="~/Content/css/mdd_styles.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui/bootstrap.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui/MarkdownDeepLib.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui/MarkdownDeep.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui/MarkdownDeepEditorUI.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui/MarkdownDeepEditor.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $().ready(function () {
+            $('#Body').MarkdownDeep({
+                help_location: '/Content/html/mdd_help.htm',
+                MarkdownInHtml: true,
+                NewWindowForExternalLinks: true,
+                ExtraMode: true 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>JSEntity</legend>
+    
+            @Html.HiddenFor(model => model.Id)
+    
+            @Html.TextBoxFor(model => model.Category, new { placeholder = "Category" })
+            @Html.TextBoxFor(model => model.Entity, new { placeholder = "Entity Name" })
+            @Html.TextBoxFor(model => model.Name, new { placeholder = "Member Name" })
+            @Html.TextBoxFor(model => model.Type, new { placeholder = "Member Type" })
+            
+            @Html.TextAreaFor(model => model.Body, new { @class = "span12", rows="20" })
+            
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </fieldset>
+    }
+    </div>
+</body>
+</html>

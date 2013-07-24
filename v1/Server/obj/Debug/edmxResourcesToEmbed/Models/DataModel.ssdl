@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="DataObjects" EntityType="DataModel.Store.DataObjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataObjectTags" EntityType="DataModel.Store.DataObjectTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentationItems" EntityType="DataModel.Store.DocumentationItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SupportRequests" EntityType="DataModel.Store.SupportRequests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ToolObjects" EntityType="DataModel.Store.ToolObjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ToolObjectTags" EntityType="DataModel.Store.ToolObjectTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserProfiles" EntityType="DataModel.Store.UserProfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ViolationReportItems" EntityType="DataModel.Store.ViolationReportItems" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DataObjects_UserProfiles" Association="DataModel.Store.FK_DataObjects_UserProfiles">
+      <End Role="UserProfiles" EntitySet="UserProfiles" />
+      <End Role="DataObjects" EntitySet="DataObjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataObjectTags_DataObjects" Association="DataModel.Store.FK_DataObjectTags_DataObjects">
+      <End Role="DataObjects" EntitySet="DataObjects" />
+      <End Role="DataObjectTags" EntitySet="DataObjectTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupportRequests_UserProfiles" Association="DataModel.Store.FK_SupportRequests_UserProfiles">
+      <End Role="UserProfiles" EntitySet="UserProfiles" />
+      <End Role="SupportRequests" EntitySet="SupportRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToolObjects_UserProfiles" Association="DataModel.Store.FK_ToolObjects_UserProfiles">
+      <End Role="UserProfiles" EntitySet="UserProfiles" />
+      <End Role="ToolObjects" EntitySet="ToolObjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ToolObjectTags_ToolObjects" Association="DataModel.Store.FK_ToolObjectTags_ToolObjects">
+      <End Role="ToolObjects" EntitySet="ToolObjects" />
+      <End Role="ToolObjectTags" EntitySet="ToolObjectTags" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DataObjects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="ToolId" Type="bigint" />
+    <Property Name="UserProfileId" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime2" Nullable="false" />
+    <Property Name="Modified" Type="datetime2" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataObjectTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DataObjectId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="DocumentationItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Object" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsStatic" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupportRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserProfileId" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime2" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Problem" Type="nvarchar" Nullable="false" />
+    <Property Name="Solution" Type="nvarchar" Nullable="false" />
+    <Property Name="WeKnowAboutIt" Type="bit" Nullable="false" />
+    <Property Name="WeSolvedIt" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ToolObjects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="UserProfileId" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime2" Nullable="false" />
+    <Property Name="Modified" Type="datetime2" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Tool" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ToolObjectTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ToolObjectId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="UserProfiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="User" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Coverage" Type="tinyint" Nullable="false" />
+    <Property Name="CoverageUntil" Type="datetime2" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UseGravatar" Type="bit" Nullable="false" />
+    <Property Name="AllowContact" Type="bit" Nullable="false" />
+    <Property Name="APIKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViolationReportItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DataId" Type="bigint" Nullable="false" />
+    <Property Name="ToolId" Type="bigint" Nullable="false" />
+    <Property Name="UserProfileId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DataObjects_UserProfiles">
+    <End Role="UserProfiles" Type="DataModel.Store.UserProfiles" Multiplicity="1" />
+    <End Role="DataObjects" Type="DataModel.Store.DataObjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataObjects">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataObjectTags_DataObjects">
+    <End Role="DataObjects" Type="DataModel.Store.DataObjects" Multiplicity="1" />
+    <End Role="DataObjectTags" Type="DataModel.Store.DataObjectTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataObjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataObjectTags">
+        <PropertyRef Name="DataObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupportRequests_UserProfiles">
+    <End Role="UserProfiles" Type="DataModel.Store.UserProfiles" Multiplicity="1" />
+    <End Role="SupportRequests" Type="DataModel.Store.SupportRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupportRequests">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToolObjects_UserProfiles">
+    <End Role="UserProfiles" Type="DataModel.Store.UserProfiles" Multiplicity="1" />
+    <End Role="ToolObjects" Type="DataModel.Store.ToolObjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToolObjects">
+        <PropertyRef Name="UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ToolObjectTags_ToolObjects">
+    <End Role="ToolObjects" Type="DataModel.Store.ToolObjects" Multiplicity="1" />
+    <End Role="ToolObjectTags" Type="DataModel.Store.ToolObjectTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToolObjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToolObjectTags">
+        <PropertyRef Name="ToolObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

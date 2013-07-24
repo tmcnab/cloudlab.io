@@ -1,0 +1,98 @@
+﻿@model dynamic
+@using Server.Helpers
+@section Styles {
+    <link href="../../Content/css/view/ObjectDetails.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts {
+    <script src="../../Scripts/bootstrap/bootbox.js" type="text/javascript"></script>
+    <script src="../../Scripts/util/beautify.js" type="text/javascript"></script>
+    <script src="../../Scripts/ui/jquery.syntaxhighlighter.js" type="text/javascript"></script>
+    <script src="../../Scripts/view/ObjectDetails.js" type="text/javascript"></script>
+}
+@{ ViewBag.Title = ((string)ViewBag.ModelType).ToLower() + ".get(" + Model.Id + ")"; }
+
+<h1>@Model.Title</h1>
+
+
+<div class="row" style="margin-top:10px;">
+    <div class="span12">
+        
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <div class="btn-toolbar" style="margin-bottom:10px;">
+            <div class="btn-group">
+                <a id="forkButton" class="btn"><i class="icon-retweet"></i></a>
+                @if (Model.UserProfile.User == User.Identity.Name)
+                {
+                <a id="editButton" class="btn"><i class="icon-edit"></i></a>
+                <a id="deleteButton" class="btn"><i class="icon-remove"></i></a>
+                }
+            </div>
+            <div class="btn-group" style="visibility:hidden">
+                <a id="reportButton" class="btn"><i class="icon-flag"></i></a>
+            </div>
+        </div>
+        <dl>
+            <dt>Created / Forked</dt>
+            <dd>@Model.Created.ToLongDateString()</dd>
+            <dt>By</dt>
+            <dd>@Model.UserProfile.User</dd>
+            @if (Model.ParentId != null)
+            {
+            <dt>Forked From</dt>
+            <dd><a href="/@(ViewBag.ModelType)/Details/@Model.ParentId">@Model.Title</a></dd>
+            }
+            @if (ViewBag.ModelType == "Data")
+            {
+                {
+                    if (Model.DataObjectTags.Count != 0)
+                    {
+                <dt>Tagged With</dt>
+                        foreach (var tag in Model.DataObjectTags)
+                        {
+                <dd><span class='label'>@tag.Value</span></dd>
+                        }
+                    }
+                }
+            }
+            else
+            {
+                {
+                    if (Model.ToolObjectTags.Count != 0)
+                    {
+                <dt>Tagged With</dt>
+                        foreach (var tag in Model.ToolObjectTags)
+                        {
+                <dd><span class='label'>@tag.Value</span></dd>
+                        }
+                    }
+                }
+            }
+        </dl>
+    </div>
+    <div class="tabbable span9">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-target="#T1" data-toggle="tab">Description</a></li>
+            <li><a data-target="#T2" data-toggle="tab">Source</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="T1">
+            @if (string.IsNullOrWhiteSpace((string)Model.Description))
+            {
+                <p><em>This item does not have a description.</em></p>    
+            } else {
+                @Html.Markdown((string)Model.Description)
+            }
+            </div>
+            <div class="tab-pane" id="T2">
+<pre class="language-javascript" id="jsContainer">
+@if (ViewBag.ModelType == "Data") { @Model.Data }
+else { @Model.Tool }</pre>
+            </div>
+        </div>
+    </div>
+    </div>
+<div id="type" class="hidden">@ViewBag.ModelType</div>
+<div id="N" class="hidden">@Model.Id</div>

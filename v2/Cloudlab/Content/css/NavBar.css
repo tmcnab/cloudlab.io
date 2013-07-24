@@ -1,0 +1,7 @@
+﻿ul.nav > li > a {
+    cursor: pointer;
+}
+
+ul.dropdown-menu > li > a {
+    cursor: pointer;
+}

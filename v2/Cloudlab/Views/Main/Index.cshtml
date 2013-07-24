@@ -1,0 +1,28 @@
+﻿@{ 
+    ViewBag.Title = "Cloudlab IDE";
+    Layout = "~/Views/Main/Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="tabbable">
+                <div class="tab-content">
+                    @Html.Partial("~/Views/Main/Tabs/TerminalTab.cshtml")
+                    @Html.Partial("~/Views/Main/Tabs/EditorTab.cshtml")
+                    @Html.Partial("~/Views/Main/Tabs/ResourcesTab.cshtml")
+                    @Html.Partial("~/Views/Main/Tabs/GraphingTab.cshtml")
+                    @Html.Partial("~/Views/Main/Tabs/DocumentationTab.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/Main/Modals/AccountInfoModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/APIModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/FlattrModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/UploadFileModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/DropboxInfoModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/DropboxAuthModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/DropboxDeAuthModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/NewCollectionModal.cshtml")
+@Html.Partial("~/Views/Main/Modals/RevokeKeyModal.cshtml")

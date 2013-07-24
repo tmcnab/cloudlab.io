@@ -1,0 +1,22 @@
+﻿.indent1
+{
+	padding-left:20px;
+}
+
+.indent2
+{
+	padding-left:40px;
+}
+
+.ml1
+{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+.ml2
+{
+	font:normal normal bold 12px Monospace;
+	height:16px;
+}

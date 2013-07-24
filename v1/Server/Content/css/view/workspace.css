@@ -1,0 +1,16 @@
+﻿.tab-content {
+    margin-top: -19px;
+}
+
+table tbody tr {
+    cursor: pointer;
+}
+
+.squared {
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+}
+
+#searchForm {
+    border-radius:0px;
+}

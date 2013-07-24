@@ -1,0 +1,11 @@
+﻿#jsContainer
+{
+	margin-left: -6px;
+}
+
+.hidden {
+    visibility: hidden;
+    max-height: 0px;
+    height: 0px;
+    min-height: 0px;
+}

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jurassic.Numerics", "Jurassic.Numerics\Jurassic.Numerics.csproj", "{F385C29C-B196-4469-9AB8-DA9B8A9C972A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudlab", "Cloudlab\Cloudlab.csproj", "{42DBD2E4-3819-429F-97C6-66660FD29590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jurassic.Cloudlab", "Jurassic.Cloudlab\Jurassic.Cloudlab.csproj", "{7C0DF28C-087E-4D4F-885C-A734C81C0978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jurassic", "Jurassic\Jurassic.csproj", "{2CE5502D-8710-4BE3-9D90-201D526904B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jurassic.CommonJS", "Jurassic.CommonJS\Jurassic.CommonJS.csproj", "{C0523051-3730-4DAB-8691-428A67A57077}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F385C29C-B196-4469-9AB8-DA9B8A9C972A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F385C29C-B196-4469-9AB8-DA9B8A9C972A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F385C29C-B196-4469-9AB8-DA9B8A9C972A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F385C29C-B196-4469-9AB8-DA9B8A9C972A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DBD2E4-3819-429F-97C6-66660FD29590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DBD2E4-3819-429F-97C6-66660FD29590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DBD2E4-3819-429F-97C6-66660FD29590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DBD2E4-3819-429F-97C6-66660FD29590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0DF28C-087E-4D4F-885C-A734C81C0978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0DF28C-087E-4D4F-885C-A734C81C0978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0DF28C-087E-4D4F-885C-A734C81C0978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0DF28C-087E-4D4F-885C-A734C81C0978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE5502D-8710-4BE3-9D90-201D526904B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE5502D-8710-4BE3-9D90-201D526904B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE5502D-8710-4BE3-9D90-201D526904B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE5502D-8710-4BE3-9D90-201D526904B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0523051-3730-4DAB-8691-428A67A57077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0523051-3730-4DAB-8691-428A67A57077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0523051-3730-4DAB-8691-428A67A57077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0523051-3730-4DAB-8691-428A67A57077}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

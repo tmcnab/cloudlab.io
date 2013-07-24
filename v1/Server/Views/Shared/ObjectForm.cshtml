@@ -1,0 +1,94 @@
+﻿@model dynamic
+@section Styles {
+    <link href="../../Content/css/cm/codemirror.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/cm/codemirror.default.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/view/ObjectForm.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/beautify.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/markdowndeep.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/markdowndeepeditor.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/codemirror/codemirror.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/codemirror/codemirror.javascript.js")" type="text/javascript"></script>
+    <script src="../../Scripts/util/jshint.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/formhelper.js")" type="text/javascript"></script>
+    <script src="../../Scripts/view/ObjectForm.js" type="text/javascript"></script>
+    <script type="text/javascript">PageHelper.init('#Data');</script>
+}
+
+<div class="page-header">
+    @if (string.IsNullOrWhiteSpace(Model.Title))
+    {
+        <h2>Create Data</h2>
+    }
+    else
+    {
+        <h2>Editing Data "@Model.Title"</h2>
+    }
+</div>
+<br />
+@using (Html.BeginForm())
+{
+<div class="tabbable">
+    <ul class="nav nav-tabs" data-tabs="tabs">
+        <li class="active">
+            <a data-toggle='tab' data-target="#data-tab">1: Data</a></li>
+        <li><a data-toggle='tab' data-target="#description-tab">2: Description</a></li>
+        <li><a data-toggle='tab' data-target="#review-tab">3: Review</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="data-tab">
+            <div class="alert-message success" id="validationMsg"><p>Validation OK</p></div>          
+            @Html.TextAreaFor(model => model.Data, 22, 20, new { style="width:900px", placeholder="This is where you put your raw JSON" })
+            @*<div id='validationToolbar' class="btn-toolbar" style='margin-top:10px;'>
+            </div>*@
+        </div>
+        <div class="tab-pane" id="description-tab">
+            @Html.Partial("MDToolbar")
+            @Html.TextAreaFor(model => model.Description, new { @class="mdd_editor", rows="22", style="width:900px", maxlength="4000", placeholder="Insert a description of your data so others can see what it is (optional)" })
+            <div class="btn-toolbar muted" style="margin-top:10px;">
+                <span id='charCount'>4000</span> characters left
+            </div>
+        </div>
+        <div class="tab-pane" id="review-tab">
+            <fieldset class="control-group">
+                <label class="control-label" for="Title">Data Title</label>
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.Title, new { @class = "input-xlarge span12", maxlength = "50", required = "required", placeholder = "Title of your dataset (required)" })
+                </div>
+            </fieldset>
+            <fieldset class="control-group">
+                <label class="control-label" for="Tags">Tags</label>
+                <div class="controls">
+                    @Html.TextBoxFor(model => model.Tags, new { @class = "input-xlarge span12", placeholder = "Whole words separated by commas (optional)" })
+                </div>
+                <p class="help-text">Tags allow others to refine their searches by searching for specific subjects that may not be present in titles alone</p>
+            </fieldset>
+            <fieldset class="control-group">
+                <label class="control-label" for="IsPublic">Privacy</label>
+                <div class="controls">
+                    <div class="control-list">
+                        <label class="checkbox">
+                            @Html.CheckBoxFor(model => model.IsPublic) I want to make this data available for others to use and copy
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form-actions">
+                <input type="submit" class="btn primary" value="Submit" />
+                <a href="/Workspace" class="btn">Cancel</a>
+            </fieldset>
+        </div>
+    </div>
+</div>
+}
+
+<div id="previewModal" class="modal modal-large hide fade">
+    <div class="modal-body" id="markdownPreview">
+    </div>
+    <div class="modal-footer">
+        <a class="btn" data-dismiss="modal" >Close</a>
+    </div>
+</div>
+
+@Html.Partial("MDReference")

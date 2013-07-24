@@ -1,0 +1,109 @@
+﻿@using Server.Models
+@section Scripts {
+    <script type="text/javascript">
+        $().ready(function () {
+            $('#nav_acp').addClass("active");    
+        });
+    </script>
+}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+        <ul class="nav">
+            <li><a>Total Memory: @ViewBag.TotalMemory</a></li>
+            <li><a>Allocated for Cache: @ViewBag.CacheMemory%</a></li>
+            <li class="divider-vertical"></li>
+            <li><a>Users: @ViewBag.UsersOnline</a></li>
+        </ul>
+        <ul class="nav pull-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/RequestReduceContent/Dashboard">RequestReduce &raquo;</a></li>
+                    <li><a href="/Documentation/Editor">New Documentation &raquo;</a></li>
+                    <li><a href="https://www.google.com/analytics/web/#realtime/rt-overview/a27831838w53290492p54146219/">Analytics</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <div class="tabbable">
+            <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="active">
+                    <a data-target="#support-tab" data-toggle='tab'>Support <span class="label">@(((List<SupportRequest>)ViewBag.SupportRequests).Count)</span></a></li>
+                <li><a data-target="#violations-tab" data-toggle='tab'>Violations <span class="label">@(((List<ViolationReportItem>)ViewBag.Violations).Count)</span></a></li>
+                <li><a data-target="#users-tab" data-toggle='tab'>Users <span class="label">@(((List<UserProfile>)ViewBag.Users).Count)</span></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="support-tab">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width:1px;">User</th>
+                                <th>Title</th>
+                                <th>Issue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach(SupportRequest item in (List<SupportRequest>)ViewBag.SupportRequests)
+                        {
+                            <tr>
+                                <td>@item.UserProfile.User</td>
+                                <td>@item.Title</td>
+                                <td>@item.Problem</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="violations-tab">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                                <th>UserId</th>
+                                <th>Data</th>
+                                <th>Tool</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (ViolationReportItem item in (List<ViolationReportItem>)ViewBag.Violations)
+                        {
+                            <tr>
+                                <td>@item.UserProfileId</td>
+                                <td><a class="btn" href="/Data/Details/@item.DataId">Link</a></td>
+                                <td><a class="btn" href="/Tools/Details/@item.ToolId">Link</a></td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="users-tab">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width:1px;">Id</th>
+                                <th>Username</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (UserProfile item in (List<UserProfile>)ViewBag.Users)
+                        {
+                            <tr>
+                                <td style="text-align:right">@item.Id</td>
+                                <td>@item.User</td>
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{ ViewBag.Title = "cloudlab.io - Error"; }
+
+@if (User.IsInRole("Administrators"))
+{
+    <h1>@(Model.ControllerName)/@(Model.ActionName)</h1>
+    <h2>@Model.Exception.Message</h2>
+    <h3>@Model.Exception.InnerException</h3>
+    <p>@Model.Exception.StackTrace</p>
+}
+else
+{
+    
+<div class="page-header">
+    <h2>Oh snap!</h2>
+</div>
+<p>Sorry, an error occurred while processing your request. No seriously, this shouldn't
+ of happened and if you let us know we'll try and fix it (unless you were messing around 
+ with things you cheeky monkey!)</p>
+}

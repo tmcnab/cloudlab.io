@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42DBD2E4-3819-429F-97C6-66660FD29590}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cloudlab</RootNamespace>
+    <AssemblyName>Cloudlab</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <JSLintSkip>\Scripts\</JSLintSkip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DropNet, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropNet.1.9.1\lib\net35\DropNet.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.3.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.3.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="NBrowserID">
+      <HintPath>..\packages\NBrowserID.0.1.0.1\lib\NBrowserID.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestReduce, Version=1.8.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RequestReduce.1.8.13\Lib\net40\RequestReduce.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=102.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropNet.1.9.1\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebApi.Core.4.0.20126.16343\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebApi.4.0.20126.16343\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetMvc.4.0.20126.16343\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.Web.Optimization.1.0.0-beta\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\System.Web.Providers.Core.1.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetRazor.Core.2.0.20126.16343\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\AspNetWebPages.Core.2.0.20126.16343\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\DropboxController.cs" />
+    <Compile Include="Controllers\Filters\APIAuthorizationFilter.cs" />
+    <Compile Include="Controllers\IDEController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\Results\FileUploadJsonResult.cs" />
+    <Compile Include="Controllers\RVMController.cs" />
+    <Compile Include="Controllers\VMController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="Helpers\GravatarHelper.cs" />
+    <Compile Include="Logic\APIVM.cs" />
+    <Compile Include="Logic\VMManager.cs" />
+    <Compile Include="Logic\VMRecord.cs" />
+    <Compile Include="Logic\VMResponse.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Dropbox.cs" />
+    <Compile Include="Logic\JSVM.cs" />
+    <Compile Include="Models\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UI\Directory.cs" />
+    <Compile Include="Models\UI\Notification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\JSEntityIndexViewModel.cs" />
+    <Compile Include="ViewModels\JSEntityViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\SharpBox.Auth">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Readme\RequestReduce.readme.txt" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.datatables.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.jqplot.css" />
+    <Content Include="Content\css\mdd_styles.css" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Content\html\mdd_help.htm" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\sync.png" />
+    <Content Include="Content\images\Logo.png" />
+    <Content Include="Content\images\mdd_ajax_loader.gif" />
+    <Content Include="Content\images\mdd_gripper.png" />
+    <Content Include="Content\images\mdd_modal_background.png" />
+    <Content Include="Content\css\NavBar.css" />
+    <Content Include="Content\css\IDE.css" />
+    <Content Include="Content\css\jquery.gritter.css" />
+    <Content Include="Content\images\gritter-light.png" />
+    <Content Include="Content\images\gritter-long.png" />
+    <Content Include="Content\images\gritter.png" />
+    <Content Include="Content\images\ie-spacer.gif" />
+    <Content Include="Content\images\mdd_toolbar.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\Site.css" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Content\fonts\fontawesome\fontawesome-webfont.eot" />
+    <None Include="Content\fonts\fontawesome\fontawesome-webfont.svgz" />
+    <None Include="Content\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <None Include="Content\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Include="Notes.md" />
+    <Content Include="Scripts\ace\ace-compat.js" />
+    <Content Include="Scripts\ace\ace.js" />
+    <Content Include="Scripts\ace\keybinding-emacs.js" />
+    <Content Include="Scripts\ace\keybinding-vim.js" />
+    <Content Include="Scripts\ace\mode-clojure.js" />
+    <Content Include="Scripts\ace\mode-coffee.js" />
+    <Content Include="Scripts\ace\mode-coldfusion.js" />
+    <Content Include="Scripts\ace\mode-csharp.js" />
+    <Content Include="Scripts\ace\mode-css.js" />
+    <Content Include="Scripts\ace\mode-c_cpp.js" />
+    <Content Include="Scripts\ace\mode-groovy.js" />
+    <Content Include="Scripts\ace\mode-haxe.js" />
+    <Content Include="Scripts\ace\mode-html.js" />
+    <Content Include="Scripts\ace\mode-java.js" />
+    <Content Include="Scripts\ace\mode-javascript.js" />
+    <Content Include="Scripts\ace\mode-json.js" />
+    <Content Include="Scripts\ace\mode-latex.js" />
+    <Content Include="Scripts\ace\mode-lua.js" />
+    <Content Include="Scripts\ace\mode-markdown.js" />
+    <Content Include="Scripts\ace\mode-ocaml.js" />
+    <Content Include="Scripts\ace\mode-perl.js" />
+    <Content Include="Scripts\ace\mode-pgsql.js" />
+    <Content Include="Scripts\ace\mode-php.js" />
+    <Content Include="Scripts\ace\mode-powershell.js" />
+    <Content Include="Scripts\ace\mode-python.js" />
+    <Content Include="Scripts\ace\mode-ruby.js" />
+    <Content Include="Scripts\ace\mode-scad.js" />
+    <Content Include="Scripts\ace\mode-scala.js" />
+    <Content Include="Scripts\ace\mode-scss.js" />
+    <Content Include="Scripts\ace\mode-sql.js" />
+    <Content Include="Scripts\ace\mode-svg.js" />
+    <Content Include="Scripts\ace\mode-text.js" />
+    <Content Include="Scripts\ace\mode-textile.js" />
+    <Content Include="Scripts\ace\mode-xml.js" />
+    <Content Include="Scripts\ace\theme-chrome.js" />
+    <Content Include="Scripts\ace\theme-clouds.js" />
+    <Content Include="Scripts\ace\theme-clouds_midnight.js" />
+    <Content Include="Scripts\ace\theme-cobalt.js" />
+    <Content Include="Scripts\ace\theme-crimson_editor.js" />
+    <Content Include="Scripts\ace\theme-dawn.js" />
+    <Content Include="Scripts\ace\theme-dreamweaver.js" />
+    <Content Include="Scripts\ace\theme-eclipse.js" />
+    <Content Include="Scripts\ace\theme-idle_fingers.js" />
+    <Content Include="Scripts\ace\theme-kr_theme.js" />
+    <Content Include="Scripts\ace\theme-merbivore.js" />
+    <Content Include="Scripts\ace\theme-merbivore_soft.js" />
+    <Content Include="Scripts\ace\theme-monokai.js" />
+    <Content Include="Scripts\ace\theme-mono_industrial.js" />
+    <Content Include="Scripts\ace\theme-pastel_on_dark.js" />
+    <Content Include="Scripts\ace\theme-solarized_dark.js" />
+    <Content Include="Scripts\ace\theme-solarized_light.js" />
+    <Content Include="Scripts\ace\theme-textmate.js" />
+    <Content Include="Scripts\ace\theme-tomorrow.js" />
+    <Content Include="Scripts\ace\theme-tomorrow_night.js" />
+    <Content Include="Scripts\ace\theme-tomorrow_night_blue.js" />
+    <Content Include="Scripts\ace\theme-tomorrow_night_bright.js" />
+    <Content Include="Scripts\ace\theme-tomorrow_night_eighties.js" />
+    <Content Include="Scripts\ace\theme-twilight.js" />
+    <Content Include="Scripts\ace\theme-vibrant_ink.js" />
+    <Content Include="Scripts\ace\worker-coffee.js" />
+    <Content Include="Scripts\ace\worker-css.js" />
+    <Content Include="Scripts\ace\worker-javascript.js" />
+    <Content Include="Scripts\IDE\Modals.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.mobile.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ui\flattr.js" />
+    <Content Include="Scripts\ui\bootstrap.js" />
+    <Content Include="Scripts\IDE\GraphingTab.js" />
+    <Content Include="Scripts\IDE\DocumentationTab.js" />
+    <Content Include="Scripts\IDE\EditorTab.js" />
+    <Content Include="Scripts\IDE\AudioTab.js" />
+    <Content Include="Scripts\IDE\CanvasTab.js" />
+    <Content Include="Scripts\IDE\ResourcesTab.js" />
+    <Content Include="Scripts\IDE\Index.js" />
+    <Content Include="Scripts\ui\jqplot-all.min.js" />
+    <Content Include="Scripts\IDE\TerminalTab.js" />
+    <Content Include="Scripts\IDE\NavBar.js" />
+    <Content Include="Scripts\jqplot\jquery.jqplot.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.barRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.ciParser.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.cursor.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.dragable.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.highlighter.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.pointLabels.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="Scripts\jqplot\plugins\jqplot.trendline.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\ui\jquery.terminal-0.4.11.js" />
+    <Content Include="Scripts\ui\jquery.terminal-0.4.7.js" />
+    <Content Include="Scripts\ui\bootstrap.datatables.js" />
+    <Content Include="Scripts\ui\jquery.dataTables.js" />
+    <Content Include="Scripts\ui\MarkdownDeep.js" />
+    <Content Include="Scripts\ui\MarkdownDeepEditor.js" />
+    <Content Include="Scripts\ui\MarkdownDeepEditorUI.js" />
+    <Content Include="Scripts\ui\MarkdownDeepLib.js" />
+    <Content Include="Scripts\ui\Uservoice.js" />
+    <Content Include="Scripts\ui\jquery.gritter.js" />
+    <Content Include="Scripts\util\Authentication.js" />
+    <Content Include="Scripts\util\jquery.form.js" />
+    <Content Include="Scripts\util\SmartStorage.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Main\NavBar.cshtml" />
+    <Content Include="Views\Main\Layout.cshtml" />
+    <Content Include="Views\Main\Tabs\AudioTab.cshtml" />
+    <Content Include="Views\Main\Tabs\GraphingTab.cshtml" />
+    <Content Include="Views\Main\Tabs\CanvasTab.cshtml" />
+    <Content Include="Views\Main\Tabs\ResourcesTab.cshtml" />
+    <Content Include="Views\Administration\Errors.cshtml" />
+    <Content Include="Views\Main\Misc\DBAuthorizedView.cshtml" />
+    <Content Include="Views\Administration\Documentation.cshtml" />
+    <Content Include="Views\Main\Scripts.cshtml" />
+    <Content Include="Views\Main\Modals\DropboxInfoModal.cshtml" />
+    <Content Include="Views\Main\Modals\DropboxAuthModal.cshtml" />
+    <Content Include="Views\Main\Modals\DropboxDeAuthModal.cshtml" />
+    <Content Include="Views\Main\Modals\NewCollectionModal.cshtml" />
+    <Content Include="Views\Main\Modals\FlattrModal.cshtml" />
+    <Content Include="Views\Main\Legal.cshtml" />
+    <Content Include="Views\Main\Modals\AccountInfoModal.cshtml" />
+    <Content Include="Views\Main\Modals\APIModal.cshtml" />
+    <Content Include="Views\Main\Modals\RevokeKeyModal.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Main\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Splash.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jurassic.Cloudlab\Jurassic.Cloudlab.csproj">
+      <Project>{7C0DF28C-087E-4D4F-885C-A734C81C0978}</Project>
+      <Name>Jurassic.Cloudlab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jurassic.Numerics\Jurassic.Numerics.csproj">
+      <Project>{F385C29C-B196-4469-9AB8-DA9B8A9C972A}</Project>
+      <Name>Jurassic.Numerics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jurassic\Jurassic.csproj">
+      <Project>{2CE5502D-8710-4BE3-9D90-201D526904B3}</Project>
+      <Name>Jurassic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Main\Tabs\EditorTab.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Main\Tabs\TerminalTab.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Main\Tabs\DocumentationTab.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Main\Modals\UploadFileModal.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>12345</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+start /MIN xcopy /s /y "$(SolutionDir)packages\RequestReduce.1.8.13\pngoptimization\*.exe" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

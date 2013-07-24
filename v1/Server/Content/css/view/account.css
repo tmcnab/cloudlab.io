@@ -1,0 +1,19 @@
+﻿.tabbable { 
+    min-height: 450px;
+}
+
+.page-header { 
+    margin-bottom:10px;
+}
+
+tbody tr { 
+    cursor:pointer;
+}
+
+#pageNav { 
+    min-height:550px;
+}
+
+#usageGraph {
+    
+}

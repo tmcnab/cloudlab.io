@@ -1,0 +1,58 @@
+﻿@model Server.Models.View.RecoveryModel
+@section Scripts {
+    <script type="text/javascript">
+        $().ready(function () {
+            if ($('#errorMessage').children().length > 0) {
+                var innerText = $('#errorMessage > div > ul > li').text();
+                console.log(innerText);
+                $('#errorMessage').empty();
+                $('#errorMessage').text(innerText);
+            } else {
+                $('#errorMessage').removeClass('alert');
+            }
+        });
+    </script>
+}
+
+<h1>Recover Your Account</h1>
+<hr />
+
+<div class="row">
+    <div class="span5">
+        <p>We understand that sometimes you might forget your password. If you fill-in the form to the 
+           right with the username and email you've provided to us, we'll get you squared-away and back
+           into the fray.</p>
+        <blockquote style="margin-top:50px;">
+            <p>“The advantage of a bad memory is that one enjoys several times the same good things for the first time.”</p>
+            <small>Friedrich Nietzsche</small>
+        </blockquote>
+    </div>
+    <div class="span6 offset1">
+        <div id="errorMessage" class="alert alert-error">
+            @Html.ValidationSummary(true)
+        </div>
+        @using (Html.BeginForm("Recover", "Account", FormMethod.Post))
+        {
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-user"></i></span>
+                        @Html.TextBoxFor(m => m.Username, new { @class = "xlarge span5", placeholder = "Required" })
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-envelope"></i></span>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "xlarge span5", placeholder = "Required" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Recover Account</button>
+            </div>
+        }
+    </div>
+</div>

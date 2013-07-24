@@ -1,0 +1,59 @@
+﻿@model Server.Models.NewRegisterModel
+
+@section Scripts {
+    <script type="text/javascript">
+    $().ready(function () {
+        if ($('#errorMessage').children().length > 0) {
+            var innerText = $('#errorMessage > div > ul > li').text();
+            console.log(innerText);
+            $('#errorMessage').empty();
+            $('#errorMessage').text(innerText);
+        } else {
+            $('#errorMessage').removeClass('alert');
+        }
+    });
+    </script>
+}
+
+<h1>Register New Account</h1>
+<hr />
+
+<div class="row">
+    <div class="span5">
+        <h3>Registration Process</h3>
+        <p>As far as registration processes go, ours is pretty simple:</p>
+        <ol>
+            <li>Provide a username and email address</li>
+            <li>Hit <em><strong>Register</strong></em></li>
+        </ol>
+        <p>That's it. We'll set you up with a free account and send you your password in the mail, so please be sure about your e-mail address!</p>
+    </div>
+    <div class="span6 offset1">
+        <div id="errorMessage" class="alert alert-error">
+            @Html.ValidationSummary(true)
+        </div>
+        <form action="/Account/Register" method="post">
+            <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+                            @Html.TextBoxFor(m => m.RUserName, new { @class = "xlarge span5", placeholder="Required" })
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span>
+                            @Html.TextBoxFor(m => m.REmail, new { @class = "xlarge span5", placeholder = "Required" })
+                        </div>
+                    </div>
+                </div>
+                <p><small>Once you have successfully registered, your account credentials will be sent to the e-mail account you have nominated. Please check your spam folder if you haven't received such an email.</small></p>
+            
+            <fieldset class="form-actions">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

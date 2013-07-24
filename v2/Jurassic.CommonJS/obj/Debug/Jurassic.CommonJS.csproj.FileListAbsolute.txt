@@ -1,0 +1,5 @@
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.CommonJS\bin\Debug\Jurassic.CommonJS.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.CommonJS\bin\Debug\Jurassic.CommonJS.pdb
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.CommonJS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.CommonJS\obj\Debug\Jurassic.CommonJS.dll
+C:\Users\Tristan McNab\Documents\Visual Studio 2010\Projects\Cloudlab\Jurassic.CommonJS\obj\Debug\Jurassic.CommonJS.pdb

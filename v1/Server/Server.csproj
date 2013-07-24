@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FEB4988-D9F7-4743-95A9-540B0F33B913}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <JSLintSkip>\Scripts\</JSLintSkip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EcmaScript.NET.modified, Version=0.1.1.0, Culture=neutral, PublicKeyToken=7d53ba4f537753a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\YUICompressor.NET.1.7.0.0\lib\net35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\packages\EnyimMemcached.2.11\lib\net35\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="le_nlog">
+      <HintPath>..\packages\le_nlog.1.5\lib\4.0\le_nlog.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownDeep">
+      <HintPath>..\packages\MarkdownDeep.Full.1.4\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.2.1.2\lib\Net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestReduce, Version=1.7.108.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RequestReduce.1.7.108\Lib\net40\RequestReduce.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.7.0.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\YUICompressor.NET.1.7.0.0\lib\net35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+    <Reference Include="zlib.net">
+      <HintPath>..\packages\zlib.net.1.0.3.0\lib\zlib.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ACPController.cs" />
+    <Compile Include="Controllers\APIController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\Filters\RateLimitAttribute.cs" />
+    <Compile Include="Controllers\Helpers\HanselZip.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IDEController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
+    <Compile Include="Controllers\WorkspaceController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Bootstrap.cs" />
+    <Compile Include="Helpers\Markdown.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\APIRepository.cs" />
+    <Compile Include="Models\Ajax\AjaxCredentialsModel.cs" />
+    <Compile Include="Models\Ajax\AjaxDataItem.cs" />
+    <Compile Include="Models\Ajax\AjaxDocumentationItem.cs" />
+    <Compile Include="Models\Ajax\AjaxListResponse.cs" />
+    <Compile Include="Models\Ajax\AjaxSearchResult.cs" />
+    <Compile Include="Models\Ajax\AjaxSupportTicketFormModel.cs" />
+    <Compile Include="Models\Ajax\AjaxTerminalResponse.cs" />
+    <Compile Include="Models\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataProcessor.cs" />
+    <Compile Include="Models\HttpStatusCode.cs" />
+    <Compile Include="Models\Json\JsonDataObject.cs" />
+    <Compile Include="Models\Json\JsonDataObjectListResult.cs" />
+    <Compile Include="Models\Json\JsonDataObjectPostModel.cs" />
+    <Compile Include="Models\Json\JsonToolObjectListResult.cs" />
+    <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\Payments.cs" />
+    <Compile Include="Models\Processors\APIProcessor.cs" />
+    <Compile Include="Models\RepositoryStatusCode.cs" />
+    <Compile Include="Models\SystemObject.cs" />
+    <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\View\AlertModel.cs" />
+    <Compile Include="Models\View\DataFormModel.cs" />
+    <Compile Include="Models\View\DataObjectFormModel.cs" />
+    <Compile Include="Models\View\RecoveryModel.cs" />
+    <Compile Include="Models\View\SupportRequestFormModel.cs" />
+    <Compile Include="Models\View\ToolFormModel.cs" />
+    <Compile Include="Models\View\WorkspaceViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Content\css\cm\codemirror.css" />
+    <Content Include="Content\css\cm\dialog.css" />
+    <Content Include="Content\css\cm\simple-hint.css" />
+    <Content Include="Content\css\fonts\anonymouspro\Anonymous_Pro-webfont.svg" />
+    <Content Include="Content\css\fonts\Inconsolata.svg" />
+    <Content Include="Content\css\jqp\jqplot.css" />
+    <Content Include="Content\css\mdd\mdd.min.css" />
+    <Content Include="Content\css\mdd\markdowndeep.css" />
+    <Content Include="Content\css\view\IDE.css" />
+    <Content Include="Content\css\view\ObjectForm.css" />
+    <Content Include="Content\css\view\ObjectDetails.css" />
+    <Content Include="Content\css\view\Home.css" />
+    <Content Include="Content\css\main\jquery.codify.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\css\view\workspace.css" />
+    <Content Include="Content\css\view\Documentation.css" />
+    <Content Include="Content\css\view\account.css" />
+    <Content Include="Content\glyphs\bomb.png" />
+    <Content Include="Content\glyphs\crop.png" />
+    <Content Include="Content\glyphs\twitter.png" />
+    <Content Include="Content\glyphs\info.png" />
+    <Content Include="Content\glyphs\warning.png" />
+    <Content Include="Content\glyphs\image.png" />
+    <Content Include="Content\glyphs\link.png" />
+    <Content Include="Content\glyphs\outdent.png" />
+    <Content Include="Content\glyphs\indent.png" />
+    <Content Include="Content\images\Account.png" />
+    <Content Include="Content\images\appharbor-logo.png" />
+    <Content Include="Content\images\bgsprite.png" />
+    <Content Include="Content\images\Data.png" />
+    <Content Include="Content\images\Documentation.png" />
+    <Content Include="Content\images\IDE.png" />
+    <Content Include="Content\images\jurassic-logo.png" />
+    <Content Include="Content\images\Logo.png" />
+    <Content Include="Content\images\mathdotnet-logo.png" />
+    <Content Include="Content\images\Plotting.png" />
+    <Content Include="Content\i\favicon.ico" />
+    <Content Include="Content\i\glyphicons-halflings-white.png" />
+    <Content Include="Content\i\glyphicons-halflings.png" />
+    <Content Include="Content\i\icon%402x.png" />
+    <Content Include="Content\i\icon-72.png" />
+    <Content Include="Content\i\icon-small%402x.png" />
+    <Content Include="Content\i\icon-small-50.png" />
+    <Content Include="Content\i\icon-small.png" />
+    <Content Include="Content\i\icon.png" />
+    <Content Include="Content\i\sprites.png" />
+    <Content Include="Content\i\spinner.gif" />
+    <Content Include="Content\jquery.jqplot.css" />
+    <Content Include="Content\jquery.terminal2.css" />
+    <Content Include="Content\glyphs\close.png" />
+    <Content Include="Content\glyphs\plus.png" />
+    <Content Include="Content\glyphs\spinner.gif" />
+    <Content Include="Content\glyphs\redo.png" />
+    <Content Include="Content\glyphs\fullscreen.png" />
+    <Content Include="Content\glyphs\reload.png" />
+    <Content Include="Content\glyphs\undo.png" />
+    <Content Include="Content\jquery.jqplot.min.css" />
+    <Content Include="Content\jquery.terminal.css" />
+    <Content Include="Content\mail\Recovery.html" />
+    <Content Include="Content\mail\Registration.html" />
+    <Content Include="Content\styles\codemirror-2.2.css" />
+    <Content Include="Content\styles\landing.css" />
+    <Content Include="Content\styles\bootstrap.min.css" />
+    <Content Include="Content\styles\bootstrap.css" />
+    <Content Include="Content\glyphs\fork.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootbox.js" />
+    <Content Include="Scripts\cm\cm-2.2.min.js" />
+    <Content Include="Scripts\cm\codemirror-custom.js" />
+    <Content Include="Scripts\cm\dialog.js" />
+    <Content Include="Scripts\cm\foldcode.js" />
+    <Content Include="Scripts\cm\formatting.js" />
+    <Content Include="Scripts\cm\javascript-hint.js" />
+    <Content Include="Scripts\cm\js-2.2.min.js" />
+    <Content Include="Scripts\cm\js-2.2.js" />
+    <Content Include="Scripts\cm\overlay.js" />
+    <Content Include="Scripts\cm\runmode.js" />
+    <Content Include="Scripts\cm\search.js" />
+    <Content Include="Scripts\cm\searchcursor.js" />
+    <Content Include="Scripts\cm\simple-hint.js" />
+    <Content Include="Scripts\mdd\MarkdownDeepEditor.js" />
+    <Content Include="Scripts\mdd\MarkdownDeepEditorUI.js" />
+    <Content Include="Scripts\mdd\MarkdownDeepLib.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ui\jquery.syntaxhighlighter.js" />
+    <Content Include="Scripts\view\PrimaryLayout.js" />
+    <Content Include="Scripts\view\ObjectForm.js" />
+    <Content Include="Scripts\view\ObjectDetails.js" />
+    <Content Include="Scripts\view\DataDetails.js" />
+    <Content Include="Scripts\view\formhelper.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\mdd\markdowndeep.js" />
+    <Content Include="Scripts\product\jquery.codemirror.intellihint.js" />
+    <Content Include="Scripts\product\jquery.codify.js" />
+    <Content Include="Scripts\cm\codemirror.javascript.js" />
+    <Content Include="Scripts\cm\codemirror.js" />
+    <Content Include="Scripts\cm\codemirror.runmode.js" />
+    <Content Include="Scripts\ga.js" />
+    <Content Include="Scripts\jqp\jqplot.barRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.blockRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.bubbleRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.canvasOverlay.js" />
+    <Content Include="Scripts\jqp\jqplot.canvasTextRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.cursor.js" />
+    <Content Include="Scripts\jqp\jqplot.dateAxisRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.donutRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.dragable.js" />
+    <Content Include="Scripts\jqp\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.funnelRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.highlighter.js" />
+    <Content Include="Scripts\jqp\jqplot.json2.js" />
+    <Content Include="Scripts\jqp\jqplot.logAxisRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.mekkoRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.ohlcRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.pieRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.pointLabels.js" />
+    <Content Include="Scripts\jqp\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.pyramidRenderer.js" />
+    <Content Include="Scripts\jqp\jqplot.trendline.js" />
+    <Content Include="Scripts\jqp\jqplot.js" />
+    <Content Include="Scripts\util\beautify.js" />
+    <Content Include="Scripts\util\jsonlint.js" />
+    <Content Include="Content\images\mdd_ajax_loader.gif" />
+    <Content Include="Content\images\mdd_gripper.png" />
+    <Content Include="Content\images\mdd_help.htm" />
+    <Content Include="Content\images\mdd_modal_background.png" />
+    <Content Include="Content\images\mdd_toolbar.png" />
+    <Content Include="Scripts\tablesorter\jquery.tablesorter.js" />
+    <Content Include="Scripts\tablesorter\jquery.tablesorter.pager.js" />
+    <Content Include="Scripts\ui\jquery.terminal-0.4.3.js" />
+    <Content Include="Scripts\util\md5.js" />
+    <Content Include="Scripts\util\hotkeys.js" />
+    <Content Include="Scripts\util\jshint.js" />
+    <Content Include="Scripts\view\Account.js" />
+    <Content Include="Scripts\view\Home.js" />
+    <Content Include="Scripts\view\Documentation.js" />
+    <Content Include="Scripts\view\IDE.js" />
+    <Content Include="Scripts\view\workspace.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\css\view\PrimaryLayout.css" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documentation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documentation\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Data\DataObjectForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IDE\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Recover.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RecoverComplete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tools\ToolObjectForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NavPublic.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NavPrivate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Workspace\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jurassic.Numerics\Jurassic.Numerics.csproj">
+      <Project>{F385C29C-B196-4469-9AB8-DA9B8A9C972A}</Project>
+      <Name>Jurassic.Numerics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jurassic\Jurassic.csproj">
+      <Project>{2CE5502D-8710-4BE3-9D90-201D526904B3}</Project>
+      <Name>Jurassic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MarkdownReference.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PrimaryLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ObjectDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ObjectForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\css\fonts\anonymouspro\Anonymous_Pro-webfont.eot" />
+    <None Include="Content\css\fonts\anonymouspro\Anonymous_Pro-webfont.ttf" />
+    <None Include="Content\css\fonts\anonymouspro\Anonymous_Pro-webfont.woff" />
+    <None Include="Content\css\fonts\Inconsolata.eot" />
+    <None Include="Content\css\fonts\Inconsolata.ttf" />
+    <None Include="Content\css\fonts\Inconsolata.woff" />
+    <None Include="Content\css\fonts\Inconsolata.otf" />
+    <Content Include="Views\Shared\MDToolbar.cshtml" />
+    <Content Include="Views\Shared\MDReference.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Legal.cshtml" />
+    <Content Include="Views\ACP\Index.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>12345</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+start /MIN xcopy /s /y "$(SolutionDir)packages\RequestReduce.1.7.108\pngoptimization\*.exe" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

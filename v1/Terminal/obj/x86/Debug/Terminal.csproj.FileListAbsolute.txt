@@ -1,0 +1,5 @@
+C:\Users\Tristan McNab\Desktop\Tau\Terminal\bin\Debug\Terminal.exe
+C:\Users\Tristan McNab\Desktop\Tau\Terminal\bin\Debug\Terminal.pdb
+C:\Users\Tristan McNab\Desktop\Tau\Terminal\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tristan McNab\Desktop\Tau\Terminal\obj\x86\Debug\Terminal.exe
+C:\Users\Tristan McNab\Desktop\Tau\Terminal\obj\x86\Debug\Terminal.pdb

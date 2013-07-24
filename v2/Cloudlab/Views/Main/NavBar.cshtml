@@ -1,0 +1,44 @@
+﻿@using Cloudlab.Helpers
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container" style="width:97%">
+            <div>
+                <img src="http://cloudlab.io/Content/i/icon.png" class="pull-left" style="width:30px; margin-top:3px;" />
+                <a class="brand">Cloudlab.io</a>
+            </div>
+            <ul class="nav nav-pills" style="margin-bottom:0">
+                <li class="divider-vertical"></li>
+                <li class="active">
+                    <a data-target="#T1" data-toggle="tab">Terminal</a></li>
+                <li><a data-target="#T2" data-toggle="tab">Editor</a></li>
+                <li><a data-target="#T_Resources" data-toggle="tab">Files</a></li>
+                <li><a data-target="#T4" data-toggle="tab">Graphing</a></li>
+                <li><a data-target="#T3" data-toggle="tab">Documentation</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li class="divider-vertical"></li>
+                <li>
+                    <a rel="tooltip" title="@User.Identity.Name" data-placement="bottom" style="padding:0; cursor:default">
+                    <img src="@Html.GravatarAvatarUrl(User.Identity.Name, 30)" style="margin-top:5px; border-radius:3px; border:1px solid #444" />
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="Nav_Account">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+                        <li><a data-toggle="modal" data-target="#DropboxInfoModal"><i class="icon-file"></i> My Dropbox</a></li>
+                        <li><a data-toggle="modal" data-target="#APIModal"><i class="icon-cog"></i> API</a></li>
+                        <li><a data-toggle="modal" data-target="#FlattrModal"><i class="icon-gift"></i> Donate</a></li>
+                        <li class="divider"></li>
+                        <li><a id="Nav_UserFeedbackButton"><i class="icon-signal"></i> Feedback &amp; Support</a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://blog.cloudlab.io" target="_blank"><i class="icon-pencil"></i> Blog</a></li>
+                        <li><a href="http://twitter.com/#!/cloudlab_io" target="_blank"><i class="icon-comment"></i> Twitter</a></li>
+                        <li><a href="/Main/Legal" target="_blank"><i class="icon-flag"></i> Legal</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/Main/Exit"><i class="icon-off"></i> Quit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

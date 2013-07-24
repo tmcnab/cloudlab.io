@@ -1,0 +1,14 @@
+﻿@model HashSet<Exception>
+
+@{
+    ViewBag.Title = "Errors";
+}
+
+<table class="table table-striped table-bordered">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr><td>@item.ToString()</td></tr>
+        }
+    </tbody>
+</table>

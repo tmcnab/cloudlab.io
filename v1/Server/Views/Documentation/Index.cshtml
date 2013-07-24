@@ -1,0 +1,47 @@
+﻿@model Dictionary<string,List<KeyValuePair<string,int>>>
+@section Styles {
+    <link href="../../Content/css/view/Documentation.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts {
+    <script src="../../Scripts/mdd/markdowndeep.js" type="text/javascript"></script>
+    <script src="../../Scripts/view/Documentation.js" type="text/javascript"></script>
+}
+
+<div class="row">
+    <div class="span3">
+        <div class="page-header">
+            <h2>Index</h2>
+        </div>
+        <ul id="objectList" class="nav pills stacked">
+            @foreach (var obj in Model)
+            {
+            <li class="ml1">
+                <a data-parent="#objectList" data-toggle="collapse" data-target="#@(obj.Key)Cat">@obj.Key</a>
+            </li>    
+            <li id="@(obj.Key)Cat" class="collapse">
+                <ul class="unstyled indent1">
+                @foreach (var name in obj.Value)
+                {
+                    <li class="ml2" data-target="@name.Value">
+                        <a data-toggle="collapse">@name.Key</a>
+                        @if (User.IsInRole("Administrators"))
+                        {
+                        <a class="label label-important" href="/Documentation/Editor/@name.Value">Edit</a>
+                        }
+                    </li>
+                }
+                </ul>
+            </li>
+            }
+        </ul>
+    </div>
+    
+    <div class="span9">
+        <div class="page-header">
+            <h2 id="doc-title">Documentation Center</h2>
+        </div>
+        <div id="doc-body">
+            <p>Welcome to the documentation section. Please select a topic on the left.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../fonts/Inconsolata.eot');
+    src: url('../fonts/Inconsolata.eot?#iefix') format('embedded-opentype'),
+         /*url('../fonts/Inconsolata.woff') format('woff'),*/
+         /*url('../fonts/Inconsolata.ttf') format('truetype'),*/
+         url('../fonts/Inconsolata.svg#InconsolataMedium') format('svg'),
+         url("../fonts/Inconsolata.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AnonymousProRegular';
+    src: url('../fonts/anonymouspro/Anonymous_Pro-webfont.eot');
+    src: url('../fonts/anonymouspro/Anonymous_Pro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/anonymouspro/Anonymous_Pro-webfont.woff') format('woff'),
+         url('../fonts/anonymouspro/Anonymous_Pro-webfont.ttf') format('truetype'),
+         url('../fonts/anonymouspro/Anonymous_Pro-webfont.svg#AnonymousProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body { 
+    padding-top: 50px; 
+}
+
+a, a:hover {
+    text-decoration:none;
+    cursor:pointer;
+}
+
+img.close {
+    cursor:pointer;
+}
+
+img.btn { 
+    height: 16px;
+}
+
+.modal-big {
+    width:80%;
+    margin-left:-40%;
+    min-height:500px;
+}
+
+.modal-large {
+     width:70%;
+     margin-left:-35%;
+}
+
+code, pre {
+    font-family:Monospace;
+}
+
+footer {
+    text-align:center;
+}
+
+footer p {
+    font-size: 10px;
+}
+
+.content {
+    min-height: 600px;
+}
+
+code {
+    padding: 0;
+    border:0;
+}

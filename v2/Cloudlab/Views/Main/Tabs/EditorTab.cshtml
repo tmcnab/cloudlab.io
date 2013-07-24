@@ -1,0 +1,58 @@
+﻿<div class="tab-pane" id="T2">
+    <div class="btn-toolbar" style="padding-right:30px">
+        <div class="btn-group">
+            <a data-editor-action="execute-content" class="btn btn-primary" title="Run" rel="tooltip" data-placement="bottom"><i class="icon-play icon-white"></i></a>
+        </div>
+        <div class="btn-group">
+            <a data-ace-action="upload" class="btn btn-inverse" title="Upload / Save" rel="tooltip" data-placement="bottom">
+                <i class="icon-upload icon-white"></i> Save
+            </a>
+            <a data-ace-action="download" class="btn btn-inverse" title="Download / Reload" rel="tooltip" data-placement="bottom">
+                <i class="icon-download icon-white"></i> Reload
+            </a>
+            <a id="T_Editor_Path" class="btn btn-inverse btn-disabled">Path: /</a>
+        </div>
+        <div class="btn-group pull-right">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-file icon-white"></i> Mode <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a data-ace-mode="ace/mode/css">        <i class="icon-ok invisible"></i> CSS</a>       </li>
+                <li><a data-ace-mode="ace/mode/html">       <i class="icon-ok invisible"></i> HTML</a>      </li>
+                <li><a data-ace-mode="ace/mode/javascript"> <i class="icon-ok invisible"></i> Javascript</a></li>
+                <li><a data-ace-mode="ace/mode/json">       <i class="icon-ok invisible"></i> JSON</a>      </li>
+                <li><a data-ace-mode="ace/mode/markdown">   <i class="icon-ok invisible"></i> Markdown</a>  </li>
+                <li><a data-ace-mode="ace/mode/sql">        <i class="icon-ok invisible"></i> SQL</a>       </li>
+                <li><a data-ace-mode="ace/mode/text">       <i class="icon-ok invisible"></i> Plaintext</a> </li>
+                <li><a data-ace-mode="ace/mode/xml">        <i class="icon-ok invisible"></i> XML</a>       </li>
+            </ul>
+        </div>
+        <div class="btn-group pull-right">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-cog icon-white"></i> Settings <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a data-ace-preference="highlight-line">    <i class="icon-ok invisible"></i> Highlight Current Line</a></li>
+                <li><a data-ace-preference="show-gutter">       <i class="icon-ok invisible"></i> Show Gutter</a></li>
+                <li><a data-ace-preference="show-invisibles">   <i class="icon-ok invisible"></i> Show Invisibles</a></li>
+                <li><a data-ace-preference="show-print-margin"> <i class="icon-ok invisible"></i> Show Print Margin</a></li>
+                <li><a data-ace-preference="use-word-wrap">     <i class="icon-ok invisible"></i> Word Wrap</a></li>
+                <li><a data-ace-preference="use-soft-tabs">     <i class="icon-ok invisible"></i> Soft Tabs</a></li>
+            </ul>
+        </div>
+        <div class="btn-group pull-right">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-cog icon-white"></i> Theme <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a data-ace-theme="ace/theme/chrome">                <i class="icon-ok invisible"></i> Chrome</a></li>
+                <li><a data-ace-theme="ace/theme/cobalt">                <i class="icon-ok invisible"></i> Cobalt</a></li>
+                <li><a data-ace-theme="ace/theme/eclipse">               <i class="icon-ok invisible"></i> Eclipse</a></li>
+                <li><a data-ace-theme="ace/theme/mono_industrial">       <i class="icon-ok invisible"></i> Mono Industrial</a></li>
+                <li><a data-ace-theme="ace/theme/textmate">              <i class="icon-ok invisible"></i> Textmate</a></li>
+                <li><a data-ace-theme="ace/theme/tomorrow_night_bright"> <i class="icon-ok invisible"></i> Tomorrow Night Bright</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content-size" id="editorContainer"></div>
+</div>
